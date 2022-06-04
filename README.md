@@ -8,7 +8,8 @@ A templated docker flask application service to be used as a starting point for 
 ## Docker
 ### Build and Run
 - `docker build -t lft-docker-flask --no-cache .`
-- `docker run -p 6000:5000 lft-docker-flask`
+- `docker run -p 8000:5000 lft-docker-flask`
+Once the app is up and running, go to `localhost:8000`
 
 ### Cleanup
 - `docker rm -f $(docker ps -aq)`
