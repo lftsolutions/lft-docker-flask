@@ -9,4 +9,4 @@ RUN pip install pipenv
 RUN pipenv install --system --deploy
 
 # Run
-CMD ["python", "lft_docker_flask.py"]
+CMD ["python", "flasklate.py"]
