@@ -8,4 +8,4 @@ RUN pip install pipenv
 
 RUN pipenv install --system --deploy
 
-CMD ["python", "app.py"]
+CMD ["python", "src/main/app.py"]
