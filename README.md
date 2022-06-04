@@ -2,8 +2,14 @@
 A templated docker flask application service to be used as a starting point for future applications
 
 ## How to use
-### Setup
-- `pipenv install`
-### Run
-- `pipenv shell`
-- `flask run`
+### Initial Setup
+- `pipenv install` Needed to setup `Pipfile.lock`
+
+## Docker
+### Build and Run
+- `docker build -t lft-docker-flask --no-cache .`
+- `docker run -p 6000:5000 lft-docker-flask`
+
+### Cleanup
+- `docker rm -f $(docker ps -aq)`
+- `docker system`
