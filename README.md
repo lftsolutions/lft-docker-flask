@@ -1,5 +1,5 @@
 # flasklate
-A templated docker flask application service to be used as a starting point for future applications
+A dockerized flask template (`flasklate`) to be used as a bootstrap starting point for future projects.
 
 ## How to use
 ### Initial Setup (Must run after cloning repo)
