@@ -9,4 +9,4 @@ RUN pip install pipenv
 RUN pipenv install --system --deploy
 
 # Run
-CMD ["python", "flasklate.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
