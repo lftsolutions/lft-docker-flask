@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-from flasklate import views
+from flasklate import routes
 
 if __name__ == '__main__':
     app.run()
