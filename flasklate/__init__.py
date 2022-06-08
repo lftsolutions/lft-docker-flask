@@ -1,9 +1,13 @@
-from flask import Flask, redirect, url_for
-app = Flask(__name__)
+from flask import Flask
 
-from flasklate.home.views import home
-app.register_blueprint(home)
+def create_app():
+    app = Flask(__name__)
+    register_blueprints(app)
 
-@app.route('/')
-def home_page():
-    return redirect(url_for('home.index'))
+    return app
+
+
+def register_blueprints(app):
+    from flasklate.home.views import home_blueprint
+    
+    app.register_blueprint(home_blueprint)
