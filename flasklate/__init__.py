@@ -1,8 +1,13 @@
 from flask import Flask
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    register_blueprints(app)
 
-from flasklate import views
+    return app
 
-if __name__ == '__main__':
-    app.run()
+
+def register_blueprints(app):
+    from flasklate.home.views import home_blueprint
+    
+    app.register_blueprint(home_blueprint)
