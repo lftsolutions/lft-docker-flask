@@ -1,3 +1,26 @@
 {% extends "base.html" %}
 {% block title %}{{page_name}}{% endblock %}
-{% block content %}{{page_name}}{% endblock %}
+
+<p>
+    {% block content %}{{page_name}}
+    <ul class="list-group">
+        <li class="list-group-item">There are 3 templates to choose from: Core, PostgreSQL, & MySQL.</li>
+        <li class="list-group-item">bcrypt is chosen as the password hasher.</li>
+        <li class="list-group-item">Session is stored inside encrypted cookie.</li>
+        <li class="list-group-item">Static directory is located under /static.</li>
+        <li class="list-group-item">Model directory is located under /models.</li>
+        <li class="list-group-item">It does not use a full blown ORM.</li>
+        <li class="list-group-item">Test database is automatically created.</li>
+        <li class="list-group-item">A minimal Dockerfile is provided.</li>
+        <li class="list-group-item">A minimal Vagrantfile is provided.</li>
+        <li class="list-group-item">github.com/jmoiron/sqlx is chosen to connect to a database.</li>
+        <li class="list-group-item">github.com/gorilla is chosen for a lot of the HTTP plumbings.</li>
+        <li class="list-group-item">github.com/carbocation/interpose is chosen as the middleware library.</li>
+        <li class="list-group-item">github.com/spf13/viper is chosen to manage application config.</li>
+        <li class="list-group-item">github.com/Sirupsen/logrus is chosen as the logging library.</li>
+        <li class="list-group-item">github.com/mattes/migrate is chosen as the database migration tool for MySQL.</li>
+        <li class="list-group-item">github.com/rnubel/pgmgr is chosen as the database migration tool for PostgreSQL.</li>
+        <li class="list-group-item">github.com/tylerb/graceful is chosen to enable graceful shutdown.</li>
+    </ul>
+</p>
+{% endblock %}
