@@ -1,17 +1,5 @@
-import logging
 from flask import Blueprint, render_template
 
-# Logger Creation
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
-# Log Formatter Creation
-formatter = logging.Formatter('%(levelname)s | %(asctime)s | %(process)d:%(thread)d | %(filename)s | %(funcName)s | %(lineno)d | %(message)s')
-
-# Log Stream Handler Creation
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-logger.addHandler(stream_handler)
 
 home_blueprint = Blueprint(
     "home", 
