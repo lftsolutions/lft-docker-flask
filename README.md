@@ -1,30 +1,32 @@
+#TODO clean up docker commands
+
 # flasklate
 A dockerized flask template (`flasklate`) to be used as a bootstrap starting point for future projects.
 
+***
+## ✨ Dev
+[http://localhost:8000/](http://localhost:8000/)
+```shell 
+docker-compose down -v && \
+    docker system prune -af && \
+    docker-compose up --build
+```
+```shell
+# debug
+docker-compose logs -f
+```
+```shell
+# login and verify database
+docker-compose exec db psql --username=$POSTGRES_USER --dbname=$POSTGRES_PASSWORD
+test_flask_dev=# \l
 
-## Getting Started
-### Run as soon as you clone the repo
-- `pipenv install` (Needed to setup `Pipfile.lock`)
-
-### As you add new dependencies
-- `pipenv install {dependency}` (Needed to keep `Pipfile` and `Pipfile.lock` in sync)
-
-
-## Development
-### Docker
-#### Build and Run
-- `DOCKER_BUILDKIT=0 docker build -t flasklate --no-cache .`
-- `docker run -p 8000:5000 flasklate`
-- Once the app is up and running, go to `localhost:8000`
-
-#### System Cleanup
-- `docker rm -f $(docker ps -aq)`
-- `docker system prune`
-
-
-## Testing
-### Execute pytest
-- `pipenv run pytest -v`
-
-### Execute pytest-cov
-- `pipenv run pytest --cov flasklate --cov-report html`
+# create user table and login to verify
+docker-compose exec web python manage.py seed_db
+docker-compose exec db psql --username=$POSTGRES_USER --dbname=$POSTGRES_PASSWORD
+test_flask_dev=# \dt
+```
+```shell
+#cleanup
+docker-compose down -v && \
+    docker system prune -af
+```
