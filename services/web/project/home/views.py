@@ -9,5 +9,6 @@ home_blueprint = Blueprint(
 
 @home_blueprint.route("/")
 def home_page():
+    
     return render_template('home/index.html', page_name=home_blueprint.name)
 

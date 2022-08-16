@@ -29,6 +29,6 @@ def create_app():
 
 
 def register_blueprints(app):
-    from flasklate.home.views import home_blueprint
+    from project.home.views import home_blueprint
     
     app.register_blueprint(home_blueprint)
