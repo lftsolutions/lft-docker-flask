@@ -1,11 +1,9 @@
 import pytest 
-from project import create_app
+from project import app
 
 
 @pytest.fixture
 def test_client():
-    app = create_app()
-
     test_client = app.test_client()
     context = app.app_context()
     
