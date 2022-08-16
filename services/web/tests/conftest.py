@@ -1,5 +1,6 @@
 import pytest 
-from flasklate import create_app
+# from flasklate import create_app
+from project import create_app
 
 
 @pytest.fixture
