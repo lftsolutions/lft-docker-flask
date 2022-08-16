@@ -30,8 +30,4 @@ RUN pytest --cov=project tests/
 ###############
 FROM base
 
-# CMD ["flask", "run", "--host", "0.0.0.0"]
-# RUN ls -la
-
-# RUN ls -la flasklate
 CMD ["flask", "run", "--host", "0.0.0.0"]
