@@ -1,8 +1,6 @@
 import logging
-from flask import Flask
-from flask.logging import default_handler
+from flask import render_template
 from project.home import home_blueprint
-
 
 # Logger Creation
 logger = logging.getLogger(__name__)
@@ -17,13 +15,7 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 
-# Instantiate Flask App
-app = Flask(__name__)
-
-# Remove Default Flask Logger
-app.logger.removeHandler(default_handler)
-
-# Add Flask Bluprints
-app.register_blueprint(home_blueprint)
-
-logger.info("Starting App!")
+@home_blueprint.route("/")
+def home():
+    logger.debug("Home Page")
+    return render_template('index.html', page_name=home_blueprint.name)
