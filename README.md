@@ -1,6 +1,7 @@
 # flasklate
 A dockerized flask template (`flasklate`) to be used as a bootstrap starting point for future projects.
-```
+
+```shell
 # display verbose logging during the execution of docker-compose
 export DOCKER_BUILDKIT=0
 ```
