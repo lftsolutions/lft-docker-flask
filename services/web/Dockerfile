@@ -29,5 +29,3 @@ RUN pytest --cov=project tests/
 # Development #
 ###############
 FROM base
-
-CMD ["flask", "run", "--host", "0.0.0.0"]
