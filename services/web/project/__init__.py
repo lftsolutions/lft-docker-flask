@@ -1,4 +1,5 @@
 import logging
+from logging.handlers import RotatingFileHandler
 from flask import Flask
 from flask.logging import default_handler
 from project.home import home_blueprint
@@ -10,6 +11,15 @@ logger.setLevel(logging.DEBUG)
 
 # Log Formatter Creation
 formatter = logging.Formatter('%(levelname)s | %(asctime)s | %(process)d:%(thread)d | %(filename)s | %(funcName)s | %(lineno)d | %(message)s')
+
+# Log File Handler Creation
+file_handler = RotatingFileHandler(
+    "project/logs/app.log",
+    maxBytes=1000000,
+    backupCount=20
+)
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 # Log Stream Handler Creation
 stream_handler = logging.StreamHandler()
